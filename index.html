@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Skill Gap Analyzer | Career Intelligence Platform</title>
+  <meta name="description" content="Know your skills. Discover your gaps. Build your future. AI-powered career intelligence platform for college students.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+  <!-- Application Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- LANDING PAGE VIEW (Pre-rendered for immediate visual display) -->
+  <div id="view-landing" style="display: block;">
+    <nav class="top-header" style="position: fixed; width: 100%; top:0; left:0; z-index: 1000; background: rgba(8,8,8,0.95); backdrop-filter: blur(12px); border-bottom:1px solid var(--border-subtle);">
+      <div style="display:flex; align-items:center; gap:12px;">
+        <div class="logo-icon">C</div>
+        <div>
+          <div class="logo-text">CAMPUS <span class="text-pink">SKILL GAP</span></div>
+          <div class="logo-tag">CAREER INTELLIGENCE</div>
+        </div>
+      </div>
+      <div style="display:flex; gap:12px;">
+        <button class="btn btn-secondary btn-sm" onclick="window.app ? window.app.showAuthModal('login') : alert('Loading app...')">Sign In</button>
+        <button class="btn btn-primary btn-sm" onclick="window.app ? window.app.showAuthModal('signup') : alert('Loading app...')">Create Account</button>
+      </div>
+    </nav>
+
+    <div class="hero-container" style="padding-top: 140px; padding-bottom: 80px;">
+      <div class="hero-glow"></div>
+      <div class="hero-content">
+        <div class="hero-tag"><i class="fa-solid fa-sparkles"></i> AI-POWERED CAREER PLATFORM FOR COLLEGES</div>
+        
+        <h1 class="hero-title" style="margin-bottom:12px;">CAMPUS <span class="text-gradient">SKILL GAP ANALYZER</span></h1>
+        
+        <h3 style="color: var(--pink-soft); font-weight:600; margin-bottom:16px; font-size:1.4rem;">
+          "Know your skills. Discover your gaps. Build your future."
+        </h3>
+
+        <p class="hero-subtitle" style="max-width:720px; margin:0 auto 32px auto;">
+          Turn your current skills into a clear career roadmap. Discover the skills you already have, identify what you're missing, and build a personalized path toward your target career.
+        </p>
+        
+        <div class="hero-actions">
+          <button class="btn btn-primary btn-lg" onclick="window.app ? window.app.navigate('onboarding') : alert('Loading app...')">
+            <i class="fa-solid fa-wand-magic-sparkles"></i> Analyze My Skills
+          </button>
+          <button class="btn btn-secondary btn-lg" onclick="window.app ? window.app.navigate('careers') : alert('Loading app...')">
+            <i class="fa-solid fa-compass"></i> Explore Careers
+          </button>
+        </div>
+
+        <!-- Futuristic Flowchart Element -->
+        <div class="flowchart-container">
+          <div class="flowchart-step"><i class="fa-solid fa-bolt text-pink"></i> CURRENT SKILLS</div>
+          <div class="flowchart-arrow">➔</div>
+          <div class="flowchart-step"><i class="fa-solid fa-chart-pie text-pink"></i> SKILL ANALYSIS</div>
+          <div class="flowchart-arrow">➔</div>
+          <div class="flowchart-step"><i class="fa-solid fa-triangle-exclamation text-pink"></i> SKILL GAPS</div>
+          <div class="flowchart-arrow">➔</div>
+          <div class="flowchart-step"><i class="fa-solid fa-map-location-dot text-pink"></i> LEARNING ROADMAP</div>
+          <div class="flowchart-arrow">➔</div>
+          <div class="flowchart-step" style="border-color:var(--pink-primary); background:var(--pink-muted);">
+            <i class="fa-solid fa-graduation-cap text-pink"></i> CAREER READY
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Why Skill Gap Analyzer Section -->
+    <div style="max-width: 1100px; margin: 0 auto; padding: 40px 20px 80px 20px;">
+      <h2 style="text-align: center; margin-bottom: 40px; font-size: 2.2rem;">
+        WHY <span class="text-gradient">SKILL GAP ANALYZER?</span>
+      </h2>
+
+      <div class="grid-3">
+        <div class="glass-card glass-card-interactive">
+          <div class="metric-icon" style="margin-bottom:16px;"><i class="fa-solid fa-bullseye"></i></div>
+          <h3>Identify Missing Skills</h3>
+          <p class="text-muted" style="margin-top:8px; font-size:0.9rem;">Quantify exact differences between classroom learning and real-world engineering benchmarks.</p>
+        </div>
+
+        <div class="glass-card glass-card-interactive">
+          <div class="metric-icon" style="margin-bottom:16px;"><i class="fa-solid fa-briefcase"></i></div>
+          <h3>Understand Career Requirements</h3>
+          <p class="text-muted" style="margin-top:8px; font-size:0.9rem;">Access updated skill profiles for top roles in ECE, Software, AI/Data, and Core engineering.</p>
+        </div>
+
+        <div class="glass-card glass-card-interactive">
+          <div class="metric-icon" style="margin-bottom:16px;"><i class="fa-solid fa-road"></i></div>
+          <h3>Personalized Learning Paths</h3>
+          <p class="text-muted" style="margin-top:8px; font-size:0.9rem;">Receive step-by-step 90-day execution roadmaps structured specifically for your timeline.</p>
+        </div>
+
+        <div class="glass-card glass-card-interactive">
+          <div class="metric-icon" style="margin-bottom:16px;"><i class="fa-solid fa-chart-line"></i></div>
+          <h3>Track Your Improvement</h3>
+          <p class="text-muted" style="margin-top:8px; font-size:0.9rem;">Monitor your readiness score climb as you log learning hours and complete modules.</p>
+        </div>
+
+        <div class="glass-card glass-card-interactive">
+          <div class="metric-icon" style="margin-bottom:16px;"><i class="fa-solid fa-code"></i></div>
+          <h3>Discover Suitable Projects</h3>
+          <p class="text-muted" style="margin-top:8px; font-size:0.9rem;">Build portfolio projects specifically designed to target your weakest skill areas.</p>
+        </div>
+
+        <div class="glass-card glass-card-interactive">
+          <div class="metric-icon" style="margin-bottom:16px;"><i class="fa-solid fa-building-columns"></i></div>
+          <h3>College Intelligence</h3>
+          <p class="text-muted" style="margin-top:8px; font-size:0.9rem;">Help colleges understand aggregated student skill gaps to optimize department training.</p>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 60px;">
+        <button class="btn btn-primary btn-lg" onclick="window.app ? window.app.navigate('dashboard') : alert('Loading app...')">
+          Launch Platform Dashboard <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- DASHBOARD / APP MAIN LAYOUT -->
+  <div id="app-main-layout" class="app-container" style="display: none;">
+    
+    <!-- SIDEBAR NAVIGATION -->
+    <aside class="sidebar" id="app-sidebar">
+      <div class="sidebar-logo">
+        <div class="logo-icon">C</div>
+        <div>
+          <div class="logo-text">CAMPUS <span class="text-pink">SKILL GAP</span></div>
+          <div class="logo-tag">CAREER INTELLIGENCE</div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section-label">Main Menu</div>
+        <a class="nav-item active" data-view="dashboard" href="#dashboard">
+          <i class="fa-solid fa-house nav-icon"></i> <span>Dashboard</span>
+        </a>
+        <a class="nav-item" data-view="onboarding" href="#onboarding">
+          <i class="fa-solid fa-wand-magic-sparkles nav-icon"></i> <span>Onboarding</span>
+        </a>
+        <a class="nav-item" data-view="gap_analysis" href="#gap_analysis">
+          <i class="fa-solid fa-chart-pie nav-icon"></i> <span>Skill Gap Analysis</span>
+        </a>
+        <a class="nav-item" data-view="careers" href="#careers">
+          <i class="fa-solid fa-compass nav-icon"></i> <span>Career Explorer</span>
+        </a>
+        <a class="nav-item" data-view="roadmap" href="#roadmap">
+          <i class="fa-solid fa-map-location-dot nav-icon"></i> <span>My Roadmap</span>
+        </a>
+        <a class="nav-item" data-view="projects" href="#projects">
+          <i class="fa-solid fa-cubes nav-icon"></i> <span>Projects</span>
+        </a>
+        <a class="nav-item" data-view="progress" href="#progress">
+          <i class="fa-solid fa-chart-line nav-icon"></i> <span>Progress</span>
+        </a>
+        <a class="nav-item" data-view="profile" href="#profile">
+          <i class="fa-solid fa-user nav-icon"></i> <span>Profile</span>
+        </a>
+
+        <div class="nav-section-label" style="margin-top:12px;">Administration</div>
+        <a class="nav-item" id="nav-college-insights" data-view="college_insights" href="#college_insights">
+          <i class="fa-solid fa-building-columns nav-icon"></i> <span>College Insights</span>
+        </a>
+        <a class="nav-item" data-view="settings" href="#settings">
+          <i class="fa-solid fa-gear nav-icon"></i> <span>Settings</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-mini-card">
+          <img id="sidebar-user-avatar" class="user-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200" alt="Avatar">
+          <div class="user-info">
+            <div id="sidebar-user-name" class="user-name">Arjun Sharma</div>
+            <div id="sidebar-user-role" class="user-role-badge">ECE • 3rd Year</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="main-content">
+      <!-- TOP HEADER -->
+      <header class="top-header">
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <button class="mobile-menu-btn" id="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
+          <div class="header-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search skills, careers, projects...">
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <div class="badge-target-career" id="header-career-badge">
+            <i class="fa-solid fa-bullseye"></i> Target: Embedded Systems Engineer
+          </div>
+          <button class="btn btn-secondary btn-sm" onclick="window.app ? window.app.navigate('landing') : alert('Loading app...')">
+            <i class="fa-solid fa-globe"></i> Landing Page
+          </button>
+        </div>
+      </header>
+
+      <!-- PAGE CONTENT AREA -->
+      <div id="page-content-area" class="page-body">
+        <!-- Views rendered here -->
+      </div>
+    </main>
+
+  </div>
+
+  <!-- AI COACH FLOATING FAB -->
+  <div class="ai-coach-fab" onclick="window.app ? window.app.toggleAICoachDrawer() : alert('Loading chatbot...')" title="Campus AI Career Coach">
+    <i class="fa-solid fa-robot"></i>
+  </div>
+
+  <!-- AI COACH DRAWER -->
+  <div class="ai-coach-drawer" id="ai-coach-drawer">
+    <div class="ai-drawer-header">
+      <div style="display:flex; align-items:center; gap:8px;">
+        <div class="logo-icon" style="width:28px; height:28px; font-size:0.8rem;">AI</div>
+        <strong>Campus AI Coach</strong>
+      </div>
+      <button class="close-modal-btn" onclick="window.app ? window.app.toggleAICoachDrawer() : null">&times;</button>
+    </div>
+
+    <div class="ai-drawer-messages" id="ai-coach-msgs">
+      <div class="ai-msg ai-msg-bot">
+        Hello! I am your AI Campus Career Coach. Ask me how to close your skill gaps, tailor your resume, or prepare for technical interviews!
+      </div>
+    </div>
+
+    <div class="ai-drawer-input">
+      <input type="text" id="ai-coach-input" class="form-control" placeholder="Ask AI coach..." onkeypress="if(event.key==='Enter' && window.app) window.app.sendAICoachMessage()">
+      <button class="btn btn-primary btn-sm" onclick="window.app ? window.app.sendAICoachMessage() : null"><i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+  </div>
+
+  <!-- GLOBAL MODAL OVERLAY -->
+  <div class="modal-overlay" id="global-modal-overlay">
+    <div class="modal-box" id="global-modal-box">
+      <!-- Modal contents injected here -->
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/ai-service.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
